@@ -57,9 +57,9 @@
                                                     <tr>
                                                         <th>Nombre</th>
                                                         <th>Fech.Creación</th>
-                                                        <th></th>
-                                                        <th></th>
-                                                        <th></th>
+                                                        <th>Permisos</th>
+                                                        <th>Editar</th>
+                                                        <th>Eliminar</th>
                                                     </tr>
                                                 </thead>
 

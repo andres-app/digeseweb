@@ -10,7 +10,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Colaborador   - Mesa de Partes</title>
+        <title>Sistema | Colaborador</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
@@ -38,12 +38,12 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index-1.html" class="d-block auth-logo">
-                                            <img src="../../assets/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">Mesa de Partes</span>
+                                            <img src="../../assets/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">Sistema de Seguimiento</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
-                                            <h5 class="mb-0">Mesa de Partes (Colaborador)</h5>
+                                            <h5 class="mb-0">Iniciar sesión</h5>
                                             <p class="text-muted mt-2">Ingrese sus credenciales de Colaborador.</p>
                                         </div>
                                         <form class="custom-form mt-4 pt-2" action="" method="post">
@@ -93,11 +93,11 @@
                                                     <div class="flex-grow-1">
                                                         <label class="form-label">Contraseña</label>
                                                     </div>
-                                                    <div class="flex-shrink-0">
+                                                    <!-- <div class="flex-shrink-0">
                                                         <div class="">
                                                             <a href="../../view/recuperarcolaborador/index.php" class="text-muted">Olvidaste tu contraseña?</a>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
 
                                                 <div class="input-group auth-pass-inputgroup">
@@ -122,7 +122,10 @@
                                             </div>
                                         </form>
 
-                                        <div class="mt-4 pt-2 text-center">
+                                        <div class="signin-other-title">Version 1.0.0</h5>
+                                         </div>
+
+                                        <!-- <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
@@ -131,7 +134,7 @@
 
                                                 <li class="list-inline-item">
 
-                                                    <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                                                    TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API
                                                     <div id="g_id_onload"
                                                         data-client_id="592225408682-ope7ptac6m0b5gh5lnusoe1pm92shrph.apps.googleusercontent.com"
                                                         data-context="signin"
@@ -141,7 +144,7 @@
                                                     >
                                                     </div>
 
-                                                    <!--TODO: Configuración del botón de inicio de sesión con Google -->
+                                                    TODO: Configuración del botón de inicio de sesión con Google
                                                     <div class="g_id_signin"
                                                         data-type="standard"
                                                         data-shape="rectangular"
@@ -154,10 +157,10 @@
                                                 </li>
 
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Derechos reservados <i class="mdi mdi-heart text-danger"></i> anderson-bastidas.com</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Todos los derechos reservados de <i class="text-danger"></i> DIGESE</p>
                                     </div>
                                 </div>
                             </div>

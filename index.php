@@ -91,11 +91,11 @@
                                                     <div class="flex-grow-1">
                                                         <label class="form-label">Contraseña</label>
                                                     </div>
-                                                    <div class="flex-shrink-0">
+                                                    <!-- <div class="flex-shrink-0">
                                                         <div class="">
                                                             <a href="view/recuperar/index.php" class="text-muted">Olvidaste tu contraseña?</a>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
 
                                                 <div class="input-group auth-pass-inputgroup">
@@ -120,7 +120,7 @@
                                             </div>
                                         </form>
 
-                                        <div class="mt-4 pt-2 text-center">
+                                        <!-- <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
                                                 <h5 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h5>
                                             </div>
@@ -129,7 +129,7 @@
 
                                                 <li class="list-inline-item">
 
-                                                    <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                                                    TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API 
                                                     <div id="g_id_onload"
                                                         data-client_id="592225408682-ope7ptac6m0b5gh5lnusoe1pm92shrph.apps.googleusercontent.com"
                                                         data-context="signin"
@@ -139,7 +139,7 @@
                                                     >
                                                     </div>
 
-                                                    <!--TODO: Configuración del botón de inicio de sesión con Google -->
+                                                    TODO: Configuración del botón de inicio de sesión con Google
                                                     <div class="g_id_signin"
                                                         data-type="standard"
                                                         data-shape="rectangular"
@@ -152,10 +152,10 @@
                                                 </li>
 
                                             </ul>
-                                        </div>
+                                        </div> -->
 
                                         <div class="mt-5 text-center">
-                                            <p class="text-muted mb-0">No tienes cuenta? <a href="view/registro/" class="text-primary fw-semibold"> Registrate </a> </p>
+                                            <!-- <p class="text-muted mb-0">No tienes cuenta? <a href="view/registro/" class="text-primary fw-semibold"> Registrate </a> </p> -->
                                             <p class="text-muted mb-0">Eres al colaborador?<a href="view/accesopersonal/" class="text-primary fw-semibold"> Acceder </a> </p>
                                         </div>
                                     </div>
