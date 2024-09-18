@@ -7,57 +7,54 @@ function init(){
     });
 }
 
-function guardaryeditar(e){
+function guardaryeditar(e) {
     e.preventDefault();
-    var formData = new FormData($("#mnt_form")[0]);
+    var formData = new FormData($("#mnt_form")[0]); // Recoge todos los datos del formulario
     $.ajax({
-        url:"../../controller/usuario.php?op=guardaryeditar",
+        url: "../../controller/usuario.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
-        success: function(datos){
-            console.log(datos);
+        success: function(datos) {
             if(datos == 1){
-
-                $('#btnguardar').prop("disabled",false);
-                $('#btnguardar').html('Recuperar');
-
-                $("#usu_id").val('');
+                // Cuando se crea un nuevo colaborador
                 $("#mnt_form")[0].reset();
-                $("#listado_table").DataTable().ajax.reload();
                 $("#mnt_modal").modal('hide');
                 Swal.fire({
-                    title: "Mesa de Partes",
-                    html: "Se registro con exito.",
+                    title: "Exito",
+                    html: "Usuario registrado con éxito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",
                 });
-            }else if(datos == 0){
+            } else if(datos == 2) {
+                // Cuando se actualiza un colaborador (incluida la edición de la contraseña)
+                $("#mnt_form")[0].reset();
+                $("#mnt_modal").modal('hide');
                 Swal.fire({
-                    title: "Mesa de Partes",
-                    html: "Registro ya existe, por favor validar.",
+                    title: "Exito",
+                    html: "Usuario actualizado con éxito.",
+                    icon: "success",
+                    confirmButtonColor: "#5156be",
+                });
+            } else if(datos == 0) {
+                Swal.fire({
+                    title: "Error",
+                    html: "El usuario ya existe, por favor valide.",
                     icon: "error",
                     confirmButtonColor: "#5156be",
                 });
-            }else if(datos == 2){
-                $("#usu_id").val('');
-                $("#mnt_form")[0].reset();
-                $("#listado_table").DataTable().ajax.reload();
-                $("#mnt_modal").modal('hide');
-                Swal.fire({
-                    title: "Mesa de Partes",
-                    html: "Se actualizo con exito.",
-                    icon: "success",
-                    confirmButtonColor: "#5156be",
-                });
             }
-        },beforeSend: function(){
-            $('#btnguardar').prop("disabled",true);
-            $('#btnguardar').html('<i class="bx bx-hourglass bx-spin font-size-16 align-middle me-2"></i>Espere..');
         },
+        beforeSend: function() {
+            $('#btnguardar').prop("disabled",true);
+        },
+        complete: function() {
+            $('#btnguardar').prop("disabled",false);
+        }
     });
 }
+
 
 $(document).ready(function(){
 
@@ -126,14 +123,16 @@ $(document).on("click","#btnnuevo",function(){
     $("#mnt_modal").modal('show');
 });
 
-function editar(usu_id){
+function editar(usu_id) {
     $("#myModalLabel").html('Editar Registro');
-    $.post("../../controller/usuario.php?op=mostrar",{usu_id:usu_id},function(data){
-        data=JSON.parse(data);
+    $.post("../../controller/usuario.php?op=mostrar", { usu_id: usu_id }, function (data) {
+        data = JSON.parse(data);
         $("#usu_id").val(data.usu_id);
         $("#usu_nomape").val(data.usu_nomape);
         $("#usu_correo").val(data.usu_correo);
         $("#rol_id").val(data.rol_id);
+        // Deja el campo de contraseña vacío, solo si el usuario lo llena se modificará.
+        $("#usu_pass").val('');
         $("#mnt_modal").modal('show');
     });
 }

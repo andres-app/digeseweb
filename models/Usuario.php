@@ -57,24 +57,21 @@
             if(isset($_POST["enviar"])){
                 $correo = $_POST["usu_correo"];
                 $pass = $_POST["usu_pass"];
-                if(empty($correo) and empty($pass)){
+        
+                if(empty($correo) || empty($pass)){
                     header("Location:".conectar::ruta()."view/accesopersonal/index.php?m=2");
                     exit();
-                }else{
-                    $sql="SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id IN (2,3)";
-                    $sql=$conectar->prepare($sql);
-                    $sql->bindValue(1,$correo);
+                } else {
+                    $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id IN (2,3)";
+                    $sql = $conectar->prepare($sql);
+                    $sql->bindValue(1, $correo);
                     $sql->execute();
-                    $resultado=$sql->fetch();
-                    if($resultado){
-                        $textoCifrado = $resultado["usu_pass"];
-
-                        $iv_dec = substr(base64_decode($textoCifrado), 0, openssl_cipher_iv_length($this->cipher));
-                        $cifradoSinIV = substr(base64_decode($textoCifrado), openssl_cipher_iv_length($this->cipher));
-                        $textoDecifrado = openssl_decrypt($cifradoSinIV, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv_dec);
-
-                        if($textoDecifrado==$pass){
-                            if(is_array($resultado) and count($resultado)>0){
+                    $resultado = $sql->fetch();
+        
+                    if($resultado) {
+                        // Usar password_verify para verificar la contraseña ingresada con la almacenada en la base de datos
+                        if(password_verify($pass, $resultado["usu_pass"])){
+                            if(is_array($resultado) && count($resultado) > 0){
                                 $_SESSION["usu_id"] = $resultado["usu_id"];
                                 $_SESSION["usu_nomape"] = $resultado["usu_nomape"];
                                 $_SESSION["usu_correo"] = $resultado["usu_correo"];
@@ -83,19 +80,20 @@
                                 header("Location:".Conectar::ruta()."view/homecolaborador/");
                                 exit();
                             }
-                        }else{
+                        } else {
+                            // Contraseña incorrecta
                             header("Location:".Conectar::ruta()."view/accesopersonal/index.php?m=3");
                             exit();
                         }
-                    }else{
+                    } else {
+                        // Usuario no encontrado
                         header("Location:".Conectar::ruta()."view/accesopersonal/index.php?m=1");
                         exit();
                     }
                 }
-
             }
-
         }
+        
 
         /* TODO: Método para registrar un nuevo usuario en la base de datos */
         public function registrar_usuario($usu_nomape,$usu_correo,$usu_pass,$usu_img,$est){
@@ -214,29 +212,37 @@
             $sql->execute();
         }
 
-        public function insert_colaborador($usu_nomape,$usu_correo,$rol_id){
-            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+        public function insert_colaborador($usu_nomape, $usu_correo, $usu_pass, $rol_id){
             $conectar = parent::conexion();
-            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
             parent::set_names();
-            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
-            $sql="INSERT INTO tm_usuario
-            (usu_nomape,usu_correo,usu_img,rol_id,est)
-            VALUES
-            (?,?,'../../assets/picture/avatar.png',?,1)";
-            /* TODO:Preparar la consulta SQL */
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1,$usu_nomape);
-            $sql->bindValue(2,$usu_correo);
-            $sql->bindValue(3,$rol_id);
-            /* TODO: Ejecutar la consulta SQL */
+        
+            // Verificar que la contraseña no esté vacía antes de hashearla
+            if (!empty($usu_pass)) {
+                $hashedPassword = password_hash($usu_pass, PASSWORD_BCRYPT); // Hashea la contraseña
+            } else {
+                return "La contraseña no puede estar vacía"; // Maneja el caso en que no se ingrese la contraseña
+            }
+        
+            // Inserción del colaborador en la base de datos
+            $sql = "INSERT INTO tm_usuario
+                    (usu_nomape, usu_correo, usu_pass, usu_img, rol_id, est)
+                    VALUES (?, ?, ?, '../../assets/picture/avatar.png', ?, 1)";
+            $sql = $conectar->prepare($sql);
+            $sql->bindValue(1, $usu_nomape);
+            $sql->bindValue(2, $usu_correo);
+            $sql->bindValue(3, $hashedPassword);  // Almacena la contraseña hasheada
+            $sql->bindValue(4, $rol_id);
             $sql->execute();
-
-            $sql1="select last_insert_id() as 'usu_id'";
-            $sql1=$conectar->prepare($sql1);
+        
+            // Retorna el ID del nuevo colaborador insertado
+            $sql1 = "SELECT last_insert_id() as 'usu_id'";
+            $sql1 = $conectar->prepare($sql1);
             $sql1->execute();
             return $sql1->fetchAll();
         }
+        
+        
+        
 
         public function get_colaborador(){
             /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
@@ -263,29 +269,38 @@
             return $sql->fetchAll();
         }
 
-        public function update_colaborador($usu_id,$usu_nomape,$usu_correo,$rol_id){
-            /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
+        public function update_colaborador($usu_id, $usu_nomape, $usu_correo, $usu_pass, $rol_id){
             $conectar = parent::conexion();
-            /* TODO: Establecer el juego de caracteres a UTF-8 utilizando el método de la clase padre */
             parent::set_names();
-            /* TODO: Consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
-            $sql="UPDATE tm_usuario
-            SET
-                usu_nomape = ?,
-                usu_correo = ?,
-                rol_id = ?,
-                fech_modi = NOW()
-            WHERE
-                usu_id = ?";
-            /* TODO:Preparar la consulta SQL */
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1,$usu_nomape);
-            $sql->bindValue(2,$usu_correo);
-            $sql->bindValue(3,$rol_id);
-            $sql->bindValue(4,$usu_id);
-            /* TODO: Ejecutar la consulta SQL */
+        
+            if(!empty($usu_pass)){
+                // Si se proporciona una nueva contraseña, hashearla y actualizarla
+                $hashedPassword = password_hash($usu_pass, PASSWORD_BCRYPT);
+        
+                $sql="UPDATE tm_usuario
+                      SET usu_nomape = ?, usu_correo = ?, usu_pass = ?, rol_id = ?, fech_modi = NOW()
+                      WHERE usu_id = ?";
+                $sql=$conectar->prepare($sql);
+                $sql->bindValue(1, $usu_nomape);
+                $sql->bindValue(2, $usu_correo);
+                $sql->bindValue(3, $hashedPassword);  // Actualiza la nueva contraseña
+                $sql->bindValue(4, $rol_id);
+                $sql->bindValue(5, $usu_id);
+            } else {
+                // Si no se proporciona una nueva contraseña, no la actualiza
+                $sql="UPDATE tm_usuario
+                      SET usu_nomape = ?, usu_correo = ?, rol_id = ?, fech_modi = NOW()
+                      WHERE usu_id = ?";
+                $sql=$conectar->prepare($sql);
+                $sql->bindValue(1, $usu_nomape);
+                $sql->bindValue(2, $usu_correo);
+                $sql->bindValue(3, $rol_id);
+                $sql->bindValue(4, $usu_id);
+            }
+        
             $sql->execute();
         }
+        
 
         public function eliminar_colaborador($usu_id){
             /* TODO: Obtener la conexión a la base de datos utilizando el método de la clase padre */
