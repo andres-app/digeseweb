@@ -24,14 +24,14 @@ function guardaryeditar(e){
                 $("#listado_table").DataTable().ajax.reload();
                 $("#mnt_modal").modal('hide');
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "DIGESE",
                     html: "Se registro con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",
                 });
             }else if(datos == 0){
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "DIGESE",
                     html: "Registro ya existe, por favor validar.",
                     icon: "error",
                     confirmButtonColor: "#5156be",
@@ -42,7 +42,7 @@ function guardaryeditar(e){
                 $("#listado_table").DataTable().ajax.reload();
                 $("#mnt_modal").modal('hide');
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "DIGESE",
                     html: "Se actualizo con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",
@@ -137,7 +137,7 @@ function eliminar(rol_id){
             $.post("../../controller/rol.php?op=eliminar",{rol_id:rol_id},function(data){
                 $("#listado_table").DataTable().ajax.reload();
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "DIGESE",
                     html: "Se elimino con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",

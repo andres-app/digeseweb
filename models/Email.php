@@ -35,12 +35,12 @@ class Email extends PHPMailer{
 
         $this->Username = $this->gCorreo;
         $this->Password = $this->gContrasena;
-        $this->setFrom($this->gCorreo,"Registro en Mesa de Partes AnderCode");
+        $this->setFrom($this->gCorreo,"Registro en DIGESE AnderCode");
 
         $this->CharSet = 'UTF8';
         $this->addAddress($datos[0]["usu_correo"]);
         $this->IsHTML(true);
-        $this->Subject = "Mesa de Partes";
+        $this->Subject = "DIGESE";
 
         $url = $conexion->ruta() . "view/confirmar/?id=" . $textoCifrado;
 
@@ -73,12 +73,12 @@ class Email extends PHPMailer{
 
         $this->Username = $this->gCorreo;
         $this->Password = $this->gContrasena;
-        $this->setFrom($this->gCorreo,"Recuperar Contraseña Mesa de Partes AnderCode");
+        $this->setFrom($this->gCorreo,"Recuperar Contraseña DIGESE AnderCode");
 
         $this->CharSet = 'UTF8';
         $this->addAddress($datos[0]["usu_correo"]);
         $this->IsHTML(true);
-        $this->Subject = "Mesa de Partes";
+        $this->Subject = "DIGESE";
 
         if ($rol_id == 1){
             $url = $conexion->ruta();
@@ -121,12 +121,12 @@ class Email extends PHPMailer{
 
         $this->Username = $this->gCorreo;
         $this->Password = $this->gContrasena;
-        $this->setFrom($this->gCorreo,"Bienvenido Colaborador Mesa de Partes AnderCode");
+        $this->setFrom($this->gCorreo,"Bienvenido Colaborador DIGESE AnderCode");
 
         $this->CharSet = 'UTF8';
         $this->addAddress($datos[0]["usu_correo"]);
         $this->IsHTML(true);
-        $this->Subject = "Mesa de Partes";
+        $this->Subject = "DIGESE";
 
         $url = $conexion->ruta()."view/accesopersonal/";
 
@@ -173,13 +173,13 @@ class Email extends PHPMailer{
 
         $this->Username = $this->gCorreo;
         $this->Password = $this->gContrasena;
-        $this->setFrom($this->gCorreo,"Nuevo Tramite Mesa de Partes AnderCode");
+        $this->setFrom($this->gCorreo,"Nuevo Tramite DIGESE AnderCode");
 
         $this->CharSet = 'UTF8';
         $this->addAddress($datos[0]["usu_correo"]);
         $this->addAddress($datos[0]["area_correo"]);
         $this->IsHTML(true);
-        $this->Subject = "Mesa de Partes";
+        $this->Subject = "DIGESE";
 
         $url = $conexion->ruta();
 
@@ -219,12 +219,12 @@ class Email extends PHPMailer{
 
         $this->Username = $this->gCorreo;
         $this->Password = $this->gContrasena;
-        $this->setFrom($this->gCorreo,"Respuesta Tramite Mesa de Partes AnderCode");
+        $this->setFrom($this->gCorreo,"Respuesta Tramite DIGESE AnderCode");
 
         $this->CharSet = 'UTF8';
         $this->addAddress($datos[0]["usu_correo"]);
         $this->IsHTML(true);
-        $this->Subject = "Mesa de Partes";
+        $this->Subject = "DIGESE";
 
         $url = $conexion->ruta();
 

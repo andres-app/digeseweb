@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>  Mnt.Colaborador Mesa de Partes</title>
+        <title>  Mnt.Colaborador DIGESE</title>
         <?php require_once("../html/head.php")?>
     </head>
 

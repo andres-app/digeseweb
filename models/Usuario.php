@@ -62,7 +62,7 @@
                     header("Location:".conectar::ruta()."view/accesopersonal/index.php?m=2");
                     exit();
                 } else {
-                    $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id IN (2,3)";
+                    $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id IN (2,3,4,5)";
                     $sql = $conectar->prepare($sql);
                     $sql->bindValue(1, $correo);
                     $sql->execute();
@@ -260,7 +260,7 @@
                 FROM tm_usuario
                 INNER JOIN tm_rol ON tm_usuario.rol_id = tm_rol.rol_id
                 WHERE tm_usuario.est = 1
-                AND tm_usuario.rol_id IN (2,3)
+                AND tm_usuario.rol_id IN (2,3,4,5)
                 ORDER BY usu_nomape";
             /* TODO:Preparar la consulta SQL */
             $sql=$conectar->prepare($sql);

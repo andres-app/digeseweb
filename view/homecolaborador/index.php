@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>  Inicio Mesa de Partes</title>
+        <title>  Inicio DIGESE</title>
         <?php require_once("../html/head.php")?>
     </head>
 
@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Inicio Colaborado</h4>
+                                    <h4 class="mb-sm-0 font-size-18">Inicio Colaborador</h4>
 
                                     
                                 </div>
@@ -36,7 +36,7 @@
 
                             <div class="card border border-primary">
                                 <div class="card-header bg-transparent border-primary">
-                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Intrucciones para el registro de la Mesa de Partes</h5>
+                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Pagina principal del colaborador</h5>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Leer Atentamente : </h5>

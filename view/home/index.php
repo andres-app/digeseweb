@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>  Inicio Mesa de Partes</title>
+        <title>  Inicio DIGESE</title>
         <?php require_once("../html/head.php")?>
     </head>
 
@@ -34,7 +34,7 @@
 
                             <div class="card border border-primary">
                                 <div class="card-header bg-transparent border-primary">
-                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Intrucciones para el registro de la Mesa de Partes</h5>
+                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Intrucciones para el registro de la DIGESE</h5>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Leer Atentamente : </h5>

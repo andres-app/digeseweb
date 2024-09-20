@@ -20,7 +20,7 @@ let myDropzone = new Dropzone('.dropzone',{
 
 myDropzone.on('maxfilesexceeded',function(file){
     Swal.fire({
-        title: "Mesa de Partes",
+        title: "DIGESE",
         text: "Solo se permiten un máximo de 5 archivos.",
         icon: "error",
         confirmButtonColor: "#5156be",
@@ -32,7 +32,7 @@ myDropzone.on('maxfilesexceeded',function(file){
 myDropzone.on('addedfile',function(file){
     if (file.size > 2 * 1024 * 1024){
         Swal.fire({
-            title: "Mesa de Partes",
+            title: "DIGESE",
             text: 'El archivo "'+ file.name +'" excede el tamaño maximo de 2 MB.',
             icon: "error",
             confirmButtonColor: "#5156be",
@@ -105,7 +105,7 @@ function enviartramite(){
             console.log(data);
 
             Swal.fire({
-                title: "Mesa de Partes",
+                title: "DIGESE",
                 html: "Su tramite a sido registrado con exito con Nro: <br><strong>"+ data +"</strong>",
                 icon: "success",
                 confirmButtonColor: "#5156be",

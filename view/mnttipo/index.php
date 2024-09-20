@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>  Mnt.Tipo Mesa de Partes</title>
+        <title>  Mnt.Tipo DIGESE</title>
         <?php require_once("../html/head.php")?>
     </head>
 

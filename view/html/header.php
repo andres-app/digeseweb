@@ -8,7 +8,7 @@
                         <img src="../../assets/picture/logo-sm.svg" alt="" height="24">
                     </span>
                     <span class="logo-lg">
-                        <img src="../../assets/picture/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Mesa de Partes</span>
+                        <img src="../../assets/picture/logo-sm.svg" alt="" height="24"> <span class="logo-txt">DIGESE</span>
                     </span>
                 </a>
 
@@ -17,7 +17,7 @@
                         <img src="../../assets/picture/logo-sm.svg" alt="" height="24">
                     </span>
                     <span class="logo-lg">
-                        <img src="../../assets/picture/logo-sm.svg" alt="" height="24"> <span class="logo-txt">Mesa de Partes</span>
+                        <img src="../../assets/picture/logo-sm.svg" alt="" height="24"> <span class="logo-txt">DIGESE</span>
                     </span>
                 </a>
             </div>

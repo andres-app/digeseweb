@@ -149,7 +149,7 @@ function eliminar(usu_id){
             $.post("../../controller/usuario.php?op=eliminar",{usu_id:usu_id},function(data){
                 $("#listado_table").DataTable().ajax.reload();
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "DIGESE",
                     html: "Se elimino con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",

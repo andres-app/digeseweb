@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Confirmar   - Mesa de Partes</title>
+        <title>Confirmar   - DIGESE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="p-2 mt-4">
                                                 <h4>Gracias por Confirmar !</h4>
-                                                <p class="text-muted">Su cuenta a sido validada, ya puede regresar a la pantalla principal y acceder al sistema de Mesa de Partes.</p>
+                                                <p class="text-muted">Su cuenta a sido validada, ya puede regresar a la pantalla principal y acceder al sistema de DIGESE.</p>
                                                 <div class="mt-4">
                                                     <a href="../../index.php" class="btn btn-primary w-100">Regresar a Acceder</a>
                                                 </div>

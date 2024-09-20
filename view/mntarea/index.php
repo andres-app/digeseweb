@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>  Mnt.Area Mesa de Partes</title>
+        <title>  Mnt.Area DIGESE</title>
         <?php require_once("../html/head.php")?>
     </head>
 

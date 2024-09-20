@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Recuperar   - Mesa de Partes</title>
+        <title>Recuperar   - DIGESE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
@@ -29,13 +29,13 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
                                         <a href="index.html" class="d-block auth-logo">
-                                            <img src="../../assets/picture/logo-sm.svg" alt="" height="28"> <span class="logo-txt">Mesa de Partes</span>
+                                            <img src="../../assets/picture/logo-sm.svg" alt="" height="28"> <span class="logo-txt">DIGESE</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
                                             <h5 class="mb-0">Recuperar Contraseña(Colaborador)</h5>
-                                            <p class="text-muted mt-2">Recuperar Contraseña Mesa de Partes</p>
+                                            <p class="text-muted mt-2">Recuperar Contraseña DIGESE</p>
                                         </div>
                                         <div class="alert alert-success text-center mb-4 mt-4 pt-2" role="alert">
                                             Ingrese su correo electronico, y siga las instrucciones.

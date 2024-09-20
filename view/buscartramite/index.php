@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>  Buscar Tramite Mesa de Partes</title>
+        <title>  Buscar Tramite DIGESE</title>
         <?php require_once("../html/head.php")?>
     </head>
 
