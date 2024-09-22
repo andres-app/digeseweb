@@ -27,6 +27,7 @@ if (isset($_SESSION["usu_id"])) {
             <div class="page-content">
                 <div class="container-fluid">
 
+                    <!-- Título de la página -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -35,63 +36,81 @@ if (isset($_SESSION["usu_id"])) {
                         </div>
                     </div>
 
+                    <!-- Contenido del perfil -->
                     <div class="row">
+                        <!-- Columna para la foto y datos del usuario -->
                         <div class="col-lg-4">
-                            <div class="card">
+                            <div class="card shadow-sm">
                                 <div class="card-body text-center">
-                                    <img src="<?php echo $_SESSION['usu_img']; ?>" class="rounded-circle avatar-lg img-thumbnail" alt="Perfil Usuario">
+                                    <img src="<?php echo $_SESSION['usu_img']; ?>"
+                                        class="rounded-circle avatar-xl img-thumbnail" alt="Perfil Usuario">
                                     <h5 class="mt-3 mb-0"><?php echo $_SESSION["usu_nomape"]; ?></h5>
                                     <p class="text-muted"><?php echo $_SESSION["usu_correo"]; ?></p>
+                                    <div class="d-grid">
+                                        <button class="btn btn-secondary btn-sm mt-2" disabled>Usuario Activo</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Columna para los detalles del perfil y formulario de actualización -->
                         <div class="col-lg-8">
-                            <div class="card">
+                            <div class="card shadow-sm">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Detalles del Perfil</h5>
                                 </div>
                                 <div class="card-body">
-                                    <form action="../../controller/usuario.php?op=actualizar_perfil" method="post">
+                                    <form action="../../controller/usuario.php?op=actualizar_perfil" method="post"
+                                        enctype="multipart/form-data">
+                                        
+                                        <!-- Nombre Completo -->
                                         <div class="mb-3">
                                             <label for="usu_nomape" class="form-label">Nombre Completo</label>
-                                            <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" value="<?php echo isset($_SESSION['usu_nomape']) ? $_SESSION['usu_nomape'] : ''; ?>">
+                                            <input type="text" class="form-control" id="usu_nomape" name="usu_nomape"
+                                                value="<?php echo isset($_SESSION['usu_nomape']) ? $_SESSION['usu_nomape'] : ''; ?>" required>
                                         </div>
 
+                                        <!-- Correo Electrónico -->
                                         <div class="mb-3">
                                             <label for="usu_correo" class="form-label">Correo Electrónico</label>
-                                            <input type="email" class="form-control" id="usu_correo" name="usu_correo" value="<?php echo isset($_SESSION['usu_correo']) ? $_SESSION['usu_correo'] : ''; ?>" readonly>
+                                            <input type="email" class="form-control" id="usu_correo" name="usu_correo"
+                                                value="<?php echo isset($_SESSION['usu_correo']) ? $_SESSION['usu_correo'] : ''; ?>" readonly>
                                         </div>
 
+                                        <!-- Cambiar Contraseña -->
                                         <div class="mb-3">
                                             <label for="usu_pass" class="form-label">Cambiar Contraseña</label>
-                                            <input type="password" class="form-control" id="usu_pass" name="usu_pass">
+                                            <input type="password" class="form-control" id="usu_pass" name="usu_pass"
+                                                placeholder="Dejar vacío si no se desea cambiar">
                                         </div>
 
-                                        <div class="mb-3">
+                                        <!-- Cambiar Foto de Perfil -->
+                                        <!-- <div class="mb-3">
                                             <label for="usu_img" class="form-label">Cambiar Foto de Perfil</label>
-                                            <input type="file" class="form-control" id="usu_img" name="usu_img">
-                                        </div>
+                                            <input type="file" class="form-control" id="usu_img" name="usu_img" accept="image/*">
+                                        </div> -->
 
-                                        <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+                                        <!-- Botón Actualizar -->
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
+                    </div> <!-- Fin del row -->
+                </div> <!-- Fin del container-fluid -->
+            </div> <!-- Fin del page-content -->
 
             <?php require_once("../html/footer.php"); ?>
-        </div>
+        </div> <!-- Fin del layout-wrapper -->
     </div>
 
     <?php require_once("../html/sidebar.php") ?>
 
-<div class="rightbar-overlay"></div>
+    <div class="rightbar-overlay"></div>
 
-<?php require_once("../html/js.php") ?>
+    <?php require_once("../html/js.php") ?>
 
 </body>
 

@@ -348,5 +348,33 @@
             $sql->execute();
             return $sql->fetchAll(pdo::FETCH_ASSOC);
         }
+        public function update_perfil($usu_id, $usu_nomape, $usu_img, $usu_pass = null) {
+            $conectar = parent::conexion();
+            parent::set_names();
+        
+            // Si se proporciona una nueva contraseña, actualizarla
+            if (!is_null($usu_pass)) {
+                $sql = "UPDATE tm_usuario 
+                        SET usu_nomape = ?, usu_img = ?, usu_pass = ?, fech_modi = NOW() 
+                        WHERE usu_id = ?";
+                $sql = $conectar->prepare($sql);
+                $sql->bindValue(1, $usu_nomape);
+                $sql->bindValue(2, $usu_img);
+                $sql->bindValue(3, $usu_pass);
+                $sql->bindValue(4, $usu_id);
+            } else {
+                // Si no se proporciona una nueva contraseña, no actualizarla
+                $sql = "UPDATE tm_usuario 
+                        SET usu_nomape = ?, usu_img = ?, fech_modi = NOW() 
+                        WHERE usu_id = ?";
+                $sql = $conectar->prepare($sql);
+                $sql->bindValue(1, $usu_nomape);
+                $sql->bindValue(2, $usu_img);
+                $sql->bindValue(3, $usu_id);
+            }
+        
+            $sql->execute();
+        }
+        
     }
 ?>

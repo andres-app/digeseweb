@@ -194,7 +194,7 @@
                                                 <button type="button" data-bs-target="#reviewcarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                             </div>
                                             <!-- end carouselIndicators -->
-                                            <div class="carousel-inner">
+                                            <!-- <div class="carousel-inner">
                                                 <div class="carousel-item active">
                                                     <div class="testi-contain text-white">
                                                         <i class="bx bxs-quote-alt-left text-success display-6"></i>
@@ -268,7 +268,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- end carousel-inner -->
                                         </div>
                                         <!-- end review carousel -->
