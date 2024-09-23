@@ -9,17 +9,17 @@
     $email = new Email();
 
     /* TODO: Utiliza una estructura switch para determinar la operación a realizar según el valor de $_GET["op"] */
-    switch($_GET["op"]){
+    // switch($_GET["op"]){
 
-        /* TODO: Si la operación es "registrar" */
-        case "recuperar":
-            $datos = $usuario->get_usuario_correo($_POST["usu_correo"],$_POST["rol_id"]);
-            if(is_array($datos) == true and count($datos) == 0){
-                echo "0";
-            }else{
-                $email->recuperar($_POST["usu_correo"],$_POST["rol_id"]);
-                echo "1";
-            }
-            break;
-    }
+    //     /* TODO: Si la operación es "registrar" */
+    //     case "recuperar":
+    //         $datos = $usuario->get_usuario_correo($_POST["usu_correo"],$_POST["rol_id"]);
+    //         if(is_array($datos) == true and count($datos) == 0){
+    //             echo "0";
+    //         }else{
+    //             $email->recuperar($_POST["usu_correo"],$_POST["rol_id"]);
+    //             echo "1";
+    //         }
+    //         break;
+    // }
 ?>

@@ -47,7 +47,7 @@ if (isset($_SESSION["usu_id"])) {
                                     <h5 class="mt-3 mb-0"><?php echo $_SESSION["usu_nomape"]; ?></h5>
                                     <p class="text-muted"><?php echo $_SESSION["usu_correo"]; ?></p>
                                     <div class="d-grid">
-                                        <button class="btn btn-secondary btn-sm mt-2" disabled>Usuario Activo</button>
+                                        <button class="btn btn-success btn-sm mt-2" disabled>Usuario Activo</button>
                                     </div>
                                 </div>
                             </div>
