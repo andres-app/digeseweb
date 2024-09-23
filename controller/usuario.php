@@ -238,7 +238,7 @@ switch ($_GET["op"]) {
             if (move_uploaded_file($_FILES["usu_img"]["tmp_name"], $ruta_imagen)) {
                 // Actualiza la sesión y la base de datos con la nueva imagen
                 $_SESSION["usu_img"] = $ruta_imagen;
-                $usuario->update_imagen($usu_id, $ruta_imagen);  // Método que debes implementar para actualizar la imagen en la base de datos
+                // $usuario->update_imagen($usu_id, $ruta_imagen);  // Método que debes implementar para actualizar la imagen en la base de datos
             } else {
                 echo "Error al subir la imagen.";
             }

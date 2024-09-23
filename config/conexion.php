@@ -15,7 +15,7 @@
         protected function conexion(){
             try{
                 /* TODO: Intenta establecer la conexión utilizando PDO */
-                  $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=mesadepartes","root","");
+                  $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=digesedb","root","");
                 /*$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=mesadepartes","root",""); */
                 return $conectar;
             }catch(Exception $e){

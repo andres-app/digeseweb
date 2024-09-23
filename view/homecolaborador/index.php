@@ -37,47 +37,12 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
 
                             <div class="card border border-primary">
                                 <div class="card-header bg-transparent border-primary">
-                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Pagina
-                                        principal del colaborador</h5>
+                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Estimado colaborador</h5>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">Leer Atentamente : </h5>
-                                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                        1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen book. It has survived not only five centuries, but also the leap into
-                                        electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                        recently with desktop publishing software like Aldus PageMaker including versions of
-                                        Lorem Ipsum.</p>
-                                    <h6 class="card-title">Paso 1 : </h6>
-                                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                        1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen book. It has survived not only five centuries, but also the leap into
-                                        electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                        recently with desktop publishing software like Aldus PageMaker including versions of
-                                        Lorem Ipsum.</p>
-                                    <h6 class="card-title">Paso 2 : </h6>
-                                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                        1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen book. It has survived not only five centuries, but also the leap into
-                                        electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                        recently with desktop publishing software like Aldus PageMaker including versions of
-                                        Lorem Ipsum.</p>
-                                    <h6 class="card-title">Paso 3 : </h6>
-                                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                                        1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                                        specimen book. It has survived not only five centuries, but also the leap into
-                                        electronic typesetting, remaining essentially unchanged. It was popularised in the
-                                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                        recently with desktop publishing software like Aldus PageMaker including versions of
-                                        Lorem Ipsum.</p>
-                                </div>
+                                    <h5 class="card-title">¡IMPORTANTE! </h5>
+                                    <p class="card-text">Usted únicamente tiene acceso a la información que ha sido específicamente asignada por el equipo de administración del sistema. Es fundamental que toda la información presentada se maneje con el más alto nivel de confidencialidad y responsabilidad. La divulgación de cualquier dato no autorizado puede comprometer la seguridad del sistema y la integridad de los procesos internos. Por ello, se recalca la importancia de no compartir, transferir o difundir la información a terceros, ni dentro ni fuera de la organización, salvo con la debida autorización. La adecuada gestión y resguardo de los datos asegura la confiabilidad del sistema y el cumplimiento de las normativas vigentes en materia de protección de la información..</p>
+                                    
                             </div>
                         </div>
 
