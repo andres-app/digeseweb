@@ -2,14 +2,14 @@
 require_once("../../config/conexion.php");
 require_once("../../models/Rol.php");
 $rol = new Rol();
-$datos = $rol->validar_menu_x_rol($_SESSION["rol_id"], "ejecucion-presupuestal");
+$datos = $rol->validar_menu_x_rol($_SESSION["rol_id"], "seho");
 if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
 ?>
     <!doctype html>
     <html lang="es">
 
     <head>
-        <title>DIGESE | Modulo 1</title>
+        <title>DIGESE | SEHO</title>
         <?php require_once("../html/head.php") ?>
         <style>
             .iframe-container {
@@ -49,7 +49,7 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Ejecución Presupuestal</h4>
+                                    <h4 class="mb-sm-0 font-size-18">SEHO</h4>
                                 </div>
                             </div>
 
