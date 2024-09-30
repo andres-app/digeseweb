@@ -2,23 +2,24 @@
 require_once("../../config/conexion.php");
 require_once("../../models/Rol.php");
 $rol = new Rol();
-$datos = $rol->validar_menu_x_rol($_SESSION["rol_id"], "ejecucion-presupuestal");
+$datos = $rol->validar_menu_x_rol($_SESSION["rol_id"], "byde");
 if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
-?>
+    ?>
     <!doctype html>
     <html lang="es">
 
     <head>
-        <title>DIGESE | Modulo 1</title>
+        <title>DIGESE</title>
         <?php require_once("../html/head.php") ?>
         <style>
             .iframe-container {
                 position: relative;
                 width: 100%;
-                height: 100vh; /* Altura al 100% de la pantalla */
+                height: 100vh;
+                /* Altura al 100% de la pantalla */
                 overflow: hidden;
                 /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-                border-radius: 10px; */
+                    border-radius: 10px; */
                 margin-top: 20px;
             }
 
@@ -27,7 +28,8 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 100%; /* Asegura que el iframe llene todo el contenedor */
+                height: 100%;
+                /* Asegura que el iframe llene todo el contenedor */
                 border: 0;
             }
         </style>
@@ -49,17 +51,17 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Ejecución Presupuestal</h4>
+                                    <h4 class="mb-sm-0 font-size-18">BYDE</h4>
                                 </div>
                             </div>
 
                             <!-- Contenedor del iframe ajustado a la pantalla -->
                             <div class="col-12">
                                 <div class="iframe-container">
-                                    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZDE5Mzg2ODEtYzQ5Ni00MTBhLWIzZGYtNDE0NjkyNTc1OTE2IiwidCI6IjE3OWJkZGE4LWQ5NjQtNDNmZi1hZDNiLTY3NDE4NmEyZmEyOCIsImMiOjR9"
-                                        allowFullScreen="true"></iframe>
+                                    <iframe src="https://www.example.com" allowFullScreen="true">Sin url</iframe>
                                 </div>
                             </div>
+
 
                         </div>
 
@@ -81,7 +83,7 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
     </body>
 
     </html>
-<?php
+    <?php
 } else {
     header("Location:" . Conectar::ruta() . "index.php");
 }
