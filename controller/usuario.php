@@ -254,22 +254,22 @@ switch ($_GET["op"]) {
         
             // Detectar el entorno y definir la URL de redirección
             $host = $_SERVER['HTTP_HOST'];
-            $uri = "/digeseweb/view/perfil/perfil.php";
+            $uri = "/view/perfil/perfil.php";  // Ajustamos la ruta correcta
         
             // Verifica si es producción o localhost
             if ($host == 'localhost') {
                 // Redirección para localhost
-                $url = "http://localhost" . $uri;
+                $url = "http://localhost/digeseweb" . $uri;
             } else {
-                // Redirección manual para producción, ajustando el dominio correcto
-                $url = "https://web.digeseseweb.edu.pe" . $uri;  // Cambia esta URL a la correcta de producción
+                // Redirección manual para producción
+                $url = "https://$host" . $uri;  // En producción, eliminamos el subdirectorio digeseweb
             }
         
             // Redirigir al perfil
             header("Location: $url");
             exit();
         
-            break;
+            break;        
        
 }
 ?>
