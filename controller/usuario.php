@@ -253,9 +253,25 @@ switch ($_GET["op"]) {
         // Actualizar los datos en la sesión
         $_SESSION["usu_nomape"] = $usu_nomape;
 
+        // Detectar el entorno y definir la URL de redirección
+        $scheme = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'http';
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = "/digeseweb/view/perfil/perfil.php";
+
+        if ($host == 'localhost') {
+            // Redirección para localhost
+            $url = "http://localhost" . $uri;
+        } else {
+            // Redirección para producción
+            $url = "$scheme://$host" . $uri;
+        }
+
         // Redirigir al perfil
-        header("Location: /digeseweb/view/perfil/perfil.php");
+        header("Location: $url");
+        exit();
+
         break;
+
 
 }
 ?>
