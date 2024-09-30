@@ -252,6 +252,11 @@ switch ($_GET["op"]) {
             // Actualizar los datos en la sesión
             $_SESSION["usu_nomape"] = $usu_nomape;
         
+            // Verificar si la contraseña fue cambiada
+            if ($usu_pass) {
+                $_SESSION["mensaje"] = "Los datos han sido actualizada correctamente.";
+            }
+        
             // Detectar el entorno y definir la URL de redirección
             $host = $_SERVER['HTTP_HOST'];
             $uri = "/view/perfil/perfil.php";  // Ajustamos la ruta correcta
@@ -269,7 +274,8 @@ switch ($_GET["op"]) {
             header("Location: $url");
             exit();
         
-            break;        
+            break;
+        
        
 }
 ?>

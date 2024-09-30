@@ -36,6 +36,14 @@ if (isset($_SESSION["usu_id"])) {
                         </div>
                     </div>
 
+                    <!-- Mostrar mensaje de confirmación si existe -->
+                    <?php if (isset($_SESSION['mensaje'])): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $_SESSION['mensaje']; ?>
+                        </div>
+                        <?php unset($_SESSION['mensaje']); // Elimina el mensaje después de mostrarlo ?>
+                    <?php endif; ?>
+
                     <!-- Contenido del perfil -->
                     <div class="row">
                         <!-- Columna para la foto y datos del usuario -->
@@ -83,12 +91,6 @@ if (isset($_SESSION["usu_id"])) {
                                             <input type="password" class="form-control" id="usu_pass" name="usu_pass"
                                                 placeholder="Dejar vacío si no se desea cambiar">
                                         </div>
-
-                                        <!-- Cambiar Foto de Perfil -->
-                                        <!-- <div class="mb-3">
-                                            <label for="usu_img" class="form-label">Cambiar Foto de Perfil</label>
-                                            <input type="file" class="form-control" id="usu_img" name="usu_img" accept="image/*">
-                                        </div> -->
 
                                         <!-- Botón Actualizar -->
                                         <div class="d-grid">
