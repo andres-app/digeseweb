@@ -1,10 +1,6 @@
 <?php
-    /* TODO:Inicia la session (si no esta iniciada) */
+    /* TODO: Inicia la sesión (si no está iniciada) */
     session_start();
-
-    /* BD-Produccion:u831978754_mesadepartes
-    User_Produccion:u831978754_andercode
-    Pass:AnderCode100K */
 
     /* TODO: Definición de la clase Conectar */
     class Conectar{
@@ -14,13 +10,19 @@
         /* TODO: Método para establecer la conexión a la base de datos */
         protected function conexion(){
             try{
-                /* TODO: Intenta establecer la conexión utilizando PDO */
-                  $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=digesedb","root","");
-                /*$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=mesadepartes","root",""); */
+                /* TODO: Detectar entorno */
+                if ($_SERVER['HTTP_HOST'] == 'localhost') {
+                    /* Configuración para el entorno de desarrollo (localhost) */
+                    $conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=digesedb","root","");
+                } else {
+                    /* Configuración para el entorno de producción */
+                    $conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=iespplamas_digeseweb","iespplamas_digeseweb","Dig3s3w3b$$$");
+                }
+                
                 return $conectar;
-            }catch(Exception $e){
+            } catch(Exception $e) {
                 /* TODO: En caso de error, imprime un mensaje y termina el script */
-                print "Error BD:" . $e->getMessage() . "<br>";
+                print "Error BD: " . $e->getMessage() . "<br>";
                 die();
             }
         }
@@ -32,8 +34,13 @@
 
         /* TODO: Método estático que devuelve la ruta base del proyecto */
         public static function ruta(){
-            //  return "https://mesadepartes.appsauri.com/";
-            return "http://localhost/digeseweb/";
+            if ($_SERVER['HTTP_HOST'] == 'localhost') {
+                /* Ruta para el entorno de desarrollo */
+                return "http://localhost/digeseweb/";
+            } else {
+                /* Ruta para el entorno de producción */
+                return "https://web.digeseseho.edu.pe/";
+            }
         }
     }
 ?>
